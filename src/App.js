@@ -13,10 +13,15 @@ class App extends Component {
       { id: 4, value: 'task 4' },
     ],
   }
+  
   render() { 
     console.log(this.state.counters)
+    const listItems = this.state.counters.map((d) => <li key={d.id}>{d.value}</li>);
     return ( <React.Fragment>
       <Form />
+      <div>
+      {listItems }
+      </div>
       </React.Fragment> );
   }
 }
