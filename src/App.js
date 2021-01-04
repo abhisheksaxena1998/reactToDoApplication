@@ -18,12 +18,17 @@ class App extends Component {
     console.log("Add a new task");
   };
   
+  handleReset = ()=>{
+    const counters = []
+    this.setState({ counters });
+  }
+
   render() { 
     console.log(this.state.counters)
     const listItems = this.state.counters.map((d) => <li key={d.id}>{d.value}</li>);
     return ( <React.Fragment>
       <main className="container">
-      <Formz counters={this.state.counters} onClick={this.handleSubmit} />
+      <Formz counters={this.state.counters} onClick={this.handleSubmit} onReset={this.handleReset} />
       </main>
       <div>
       {listItems }

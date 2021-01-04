@@ -11,6 +11,7 @@ class Formz extends Component {
         >
           Add task
         </button>
+        <button onClick={this.props.onReset}>Reset</button>
       </div>
     );
   }
