@@ -7,16 +7,15 @@ import './App.css';
 class App extends Component {
   state = {
     counters: [
-      { id: 1, value: 0 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 },
+      { id: 1, value: 'task 1' },
+      { id: 2, value: 'task 2' },
+      { id: 3, value: 'task 3' },
+      { id: 4, value: 'task 4' },
     ],
   }
   render() { 
     console.log(this.state.counters)
     return ( <React.Fragment>
-
       <Form />
       </React.Fragment> );
   }
