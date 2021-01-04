@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Form from "./components/form"
+import Formz from "./components/form"
 import './App.css';
 
 
@@ -12,13 +12,19 @@ class App extends Component {
       { id: 3, value: 'task 3' },
       { id: 4, value: 'task 4' },
     ],
-  }
+  };
+
+  handleSubmit = () => {
+    console.log("Add a new task");
+  };
   
   render() { 
     console.log(this.state.counters)
     const listItems = this.state.counters.map((d) => <li key={d.id}>{d.value}</li>);
     return ( <React.Fragment>
-      <Form />
+      <main className="container">
+      <Formz counters={this.state.counters} onClick={this.handleSubmit} />
+      </main>
       <div>
       {listItems }
       </div>

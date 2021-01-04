@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
-class Form extends Component {
-  state = {};
+class Formz extends Component {
   render() {
     return (
-      <div className="todoListMain">
-        <div className="header">
-          <form>
-            <input placeholder="Enter task"></input>
-            <button type="submit">Add task</button>
-          </form>
-        </div>
+      <div>
+        <input placeholder="Enter task"></input>
+        <button
+          onClick={this.props.onClick}
+          className="btn btn-primary btn-sm m-2"
+        >
+          Add task
+        </button>
       </div>
     );
   }
 }
 
-export default Form;
+export default Formz;
