@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ListItems from "./components/itemList"
 
 
 class App extends Component {
@@ -65,6 +66,10 @@ class App extends Component {
       <div>
       {listItems }
       </div>
+      <main className="container">
+        < ListItems items={this.state.items}
+        />
+        </main>
       </React.Fragment> );
   }
 }
