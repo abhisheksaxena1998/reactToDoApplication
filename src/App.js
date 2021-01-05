@@ -27,7 +27,6 @@ class App extends Component {
       }
     })
     }
-    console.log("Add a new task");
   };
   
   handleReset = ()=>{
