@@ -1,35 +1,68 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Formz from "./components/form"
 import './App.css';
 
 
 class App extends Component {
-  state = {
-    counters: [
-      { id: 1, value: 'task 1' },
-      { id: 2, value: 'task 2' },
-      { id: 3, value: 'task 3' },
-      { id: 4, value: 'task 4' },
+  state = {currentItem:{
+    key:'',
+    text:''
+  },
+    items: [
+      { key: 1, text: 'task 1' },
+      { key: 2, text: 'task 2' },
+      { key: 3, text: 'task 3' },
+      { key: 4, text: 'task 4' },
     ],
   };
 
   handleSubmit = () => {
+    const newItem = this.state.currentItem;
+    if(newItem.text !==""){
+      const items = [...this.state.items, newItem];
+    this.setState({
+      items: items,
+      currentItem:{
+        text:'',
+        key:''
+      }
+    })
+    }
     console.log("Add a new task");
   };
   
   handleReset = ()=>{
-    const counters = []
-    this.setState({ counters });
+    const items = []
+    this.setState({ items });
   }
 
   render() { 
-    console.log(this.state.counters)
-    const listItems = this.state.counters.map((d) => <li key={d.id}>{d.value}</li>);
+    console.log(this.state.items)
+    const listItems = this.state.items.map((d) => <li key={d.key}>{d.text}</li>);
     return ( <React.Fragment>
-      <main className="container">
-      <Formz counters={this.state.counters} onClick={this.handleSubmit} onReset={this.handleReset} />
-      </main>
+
+    <input
+          type="text"
+          className="input"
+          value= {this.state.currentItem.text}
+          placeholder="Enter task"
+          onChange={(e) => {
+            this.setState({
+              currentItem:{
+                text: e.target.value,
+                key: Date.now()
+              }
+            });
+            console.log(this.state);
+          }}
+        ></input>
+        <button
+          onClick={this.handleSubmit}
+          className="btn btn-primary btn-sm m-2"
+        >
+          Add task
+        </button>
+        <button onClick={this.handleReset}>Mark all as done</button>
+
       <div>
       {listItems }
       </div>
