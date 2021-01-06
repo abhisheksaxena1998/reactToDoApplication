@@ -6,7 +6,6 @@ import NavBar from "./components/navbar"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import Footer from "./components/footer"
 
 
 class App extends Component {
@@ -19,6 +18,13 @@ class App extends Component {
       { key: 4, text: 'Do cool projects in React' },
     ],
   };
+
+  checkComplete(){
+    if (this.state.items.length===0) return (<div className="imagebox">
+      <img className="img-completed" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/src/og-image.png"></img>
+      </div>)
+    
+    }
 
   handleSubmit = () => {
     
@@ -108,6 +114,7 @@ class App extends Component {
         </button> 
         <button className="btn blue-gradient waves-effect waves-light " onClick={this.handleReset}>Mark all as done</button>
         </div>
+        {this.checkComplete()}
         </div></div>
         
        
