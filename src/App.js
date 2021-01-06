@@ -3,6 +3,10 @@ import './App.css';
 import swal from "sweetalert";
 import ListItems from "./components/itemList"
 import NavBar from "./components/navbar"
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
+import Footer from "./components/footer"
 
 
 class App extends Component {
@@ -12,8 +16,6 @@ class App extends Component {
   },
     items: [
       { key: 1, text: 'Learn JavaScript' },
-      { key: 2, text: 'Do cool projects in JavaScript' },
-      { key: 3, text: 'Learn React' },
       { key: 4, text: 'Do cool projects in React' },
     ],
   };
@@ -80,6 +82,9 @@ class App extends Component {
     return ( <React.Fragment>
     <NavBar totalTasks={this.state.items.length}/>
     <div className="container-for-tasks">
+    <div class="card">
+  <div class="card-body">
+    
     <input
           type="text"
           className="form-control"
@@ -96,18 +101,21 @@ class App extends Component {
           }}
         ></input>
         <button
+        type="button" className="btn blue-gradient waves-effect waves-light "
           onClick={this.handleSubmit}
-          className="btn btn-primary btn-sm m-2"
         >
           Add task
         </button> 
-        <button className="btn btn-primary btn-sm m-2" onClick={this.handleReset}>Mark all as done</button>
+        <button className="btn blue-gradient waves-effect waves-light " onClick={this.handleReset}>Mark all as done</button>
         </div>
+        </div></div>
+        
        
       <main className="container">
         < ListItems items={this.state.items} setUpdate={this.setUpdate} deleteItem={this.deleteItem}
         />
         </main>
+        
       </React.Fragment> );
   }
 }

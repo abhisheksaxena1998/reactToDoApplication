@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import swal from "sweetalert";
 import "./itemList.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 class ListItems extends Component {
   render() {
@@ -29,7 +32,7 @@ class ListItems extends Component {
                   this.props.deleteItem(item.key);
                 }}
               >
-                Delete Task
+                Mark as Done !
               </button>
             </div>
           </p>

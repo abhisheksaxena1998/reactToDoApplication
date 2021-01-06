@@ -1,8 +1,11 @@
 import React from "react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 const NavBar = (props) => {
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="heavy-rain-gradient navbar navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand">
           <img
