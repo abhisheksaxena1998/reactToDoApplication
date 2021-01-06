@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import swal from "sweetalert";
 import ListItems from "./components/itemList"
 import NavBar from "./components/navbar"
 
@@ -18,8 +19,14 @@ class App extends Component {
   };
 
   handleSubmit = () => {
+    
     const newItem = this.state.currentItem;
     if(newItem.text !==""){
+      swal(
+        'Added !',
+        'To Do Saved !',
+        'success'
+                 )
       const items = [...this.state.items, newItem];
     this.setState({
       items: items,
@@ -58,6 +65,11 @@ class App extends Component {
    
   }
   handleReset = ()=>{
+    swal(
+      'Completed !',
+      'Marked all as done !',
+      'warning'
+               )
     const items = []
     this.setState({ items });
   }

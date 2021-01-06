@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from "sweetalert";
 import "./itemList.css";
 
 class ListItems extends Component {
@@ -22,8 +23,9 @@ class ListItems extends Component {
             </div>
             <div className="newButtonRow">
               <button
-                className="btn btn-primary btn-sm"
+                className="btn btn-warning btn-sm"
                 onClick={() => {
+                  swal("Deleted !", "Marked as done :)", "error");
                   this.props.deleteItem(item.key);
                 }}
               >

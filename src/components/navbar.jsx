@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
 const NavBar = (props) => {
   return (
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-light bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand">
           <img
             src="https://www.any.do/v4/images/og-image.png"
             height="50"
