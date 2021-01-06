@@ -20,9 +20,14 @@ class App extends Component {
   };
 
   checkComplete(){
-    if (this.state.items.length===0) return (<div className="imagebox">
+    if (this.state.items.length===0) {return (<div className="imagebox">
+      <img className="img-completed" alt="" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
+      </div>)}
+      else{
+        return (<div className="imagebox">
       <img className="img-completed" alt="" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
       </div>)
+      }
     
     }
 
