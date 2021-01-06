@@ -8,10 +8,20 @@ class ListItems extends Component {
       return (
         <div className="list" key={item.key}>
           <p>
-            <input type="text" id={item.key} value={item.text} />
+            <span>
+              <input
+                type="text"
+                className="form-control"
+                id={item.key}
+                value={item.text}
+                onChange={(e) => {
+                  this.props.setUpdate(e.target.value, item.key);
+                }}
+              />
+            </span>
             <span>
               <button
-                className="btn btn-primary btn-sm m-2"
+                className="btn btn-primary btn-sm"
                 onClick={() => {
                   console.log(item.key);
                 }}

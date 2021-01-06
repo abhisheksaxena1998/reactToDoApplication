@@ -29,7 +29,21 @@ class App extends Component {
     })
     }
   };
-  
+  setUpdate=(text,key)=>{
+    console.log("items:"+this.state.items);
+    const items = this.state.items;
+    items.map(item=>{      
+      if(item.key===key){
+        console.log(item.key +"    "+key)
+        item.text= text;
+      }
+    })
+    this.setState({
+      items: items
+    })
+    
+   
+  }
   handleReset = ()=>{
     const items = []
     this.setState({ items });
@@ -67,7 +81,7 @@ class App extends Component {
       {listItems }
       </div>
       <main className="container">
-        < ListItems items={this.state.items}
+        < ListItems items={this.state.items} setUpdate={this.setUpdate}
         />
         </main>
       </React.Fragment> );
