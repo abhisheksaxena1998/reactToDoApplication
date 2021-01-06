@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ListItems from "./components/itemList"
+import NavBar from "./components/navbar"
 
 
 class App extends Component {
@@ -9,10 +10,10 @@ class App extends Component {
     text:''
   },
     items: [
-      { key: 1, text: 'task 1' },
-      { key: 2, text: 'task 2' },
-      { key: 3, text: 'task 3' },
-      { key: 4, text: 'task 4' },
+      { key: 1, text: 'Learn JavaScript' },
+      { key: 2, text: 'Do cool projects in JavaScript' },
+      { key: 3, text: 'Learn React' },
+      { key: 4, text: 'Do cool projects in React' },
     ],
   };
 
@@ -29,6 +30,10 @@ class App extends Component {
     })
     }
   };
+
+  totalTasks=()=>{
+    return this.props.state.items.length
+  }
 
   deleteItem=(key)=>{
     const filteredItems= this.state.items.filter(item =>
@@ -61,7 +66,7 @@ class App extends Component {
     console.log(this.state.items);
     const listItems = this.state.items.map((d) => <li key={d.key}>{d.text}</li>);
     return ( <React.Fragment>
-
+    <NavBar totalTasks={this.state.items.length}/>
     <input
           type="text"
           className="input"
