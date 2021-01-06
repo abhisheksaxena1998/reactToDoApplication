@@ -25,7 +25,7 @@ class App extends Component {
       </div>)}
       else{
         return (<div className="imagebox">
-      <img className="img-completed" alt="" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
+      <img className="img-completed" alt="" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/todo.png"></img>
       </div>)
       }
     
