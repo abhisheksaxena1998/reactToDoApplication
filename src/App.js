@@ -73,7 +73,7 @@ class App extends Component {
    
   }
   handleReset = ()=>{
-    navigator.vibrate(400);
+    navigator.vibrate(200);
     swal(
       'Completed !',
       'Marked all as done !',
