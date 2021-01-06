@@ -21,7 +21,7 @@ class App extends Component {
 
   checkComplete(){
     if (this.state.items.length===0) return (<div className="imagebox">
-      <img className="img-completed" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
+      <img className="img-completed" alt="" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
       </div>)
     
     }
@@ -62,18 +62,16 @@ class App extends Component {
     const items = this.state.items;
     items.map(item=>{      
       if(item.key===key){
-        console.log(item.key +"    "+key)
         item.text= text;
       }
+      return "";
     })
     this.setState({
       items: items
-    })
-    
-   
+    })  
   }
   handleReset = ()=>{
-    navigator.vibrate(200);
+    navigator.vibrate(100);
     swal(
       'Completed !',
       'Marked all as done !',
@@ -85,12 +83,11 @@ class App extends Component {
 
   render() { 
     console.log(this.state.items);
-    const listItems = this.state.items.map((d) => <li key={d.key}>{d.text}</li>);
     return ( <React.Fragment>
     <NavBar totalTasks={this.state.items.length}/>
     <div className="container-for-tasks">
-    <div class="card">
-  <div class="card-body">
+    <div className="card">
+  <div className="card-body">
     
     <input
           type="text"

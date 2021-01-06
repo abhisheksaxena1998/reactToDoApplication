@@ -7,8 +7,9 @@ const NavBar = (props) => {
   return (
     <nav className="heavy-rain-gradient navbar navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand">
+        <div className="navbar-brand">
           <img
+            alt=""
             src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/src/og-image.png"
             height="60"
             loading="lazy"
@@ -20,7 +21,7 @@ const NavBar = (props) => {
           <span className="badge badge-pill badge-secondary">
             {props.totalTasks}
           </span>
-        </a>
+        </div>
       </div>
     </nav>
   );
