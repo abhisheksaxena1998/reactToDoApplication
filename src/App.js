@@ -67,11 +67,12 @@ class App extends Component {
     const listItems = this.state.items.map((d) => <li key={d.key}>{d.text}</li>);
     return ( <React.Fragment>
     <NavBar totalTasks={this.state.items.length}/>
+    <div className="container-for-tasks">
     <input
           type="text"
-          className="input"
+          className="form-control"
           value= {this.state.currentItem.text}
-          placeholder="Enter task"
+          placeholder="Enter tasks"
           onChange={(e) => {
             this.setState({
               currentItem:{
@@ -87,12 +88,10 @@ class App extends Component {
           className="btn btn-primary btn-sm m-2"
         >
           Add task
-        </button>
-        <button onClick={this.handleReset}>Mark all as done</button>
-
-      <div>
-      {listItems }
-      </div>
+        </button> 
+        <button className="btn btn-primary btn-sm m-2" onClick={this.handleReset}>Mark all as done</button>
+        </div>
+       
       <main className="container">
         < ListItems items={this.state.items} setUpdate={this.setUpdate} deleteItem={this.deleteItem}
         />

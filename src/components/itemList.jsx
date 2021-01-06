@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./itemList.css";
 
 class ListItems extends Component {
   render() {
@@ -8,7 +9,7 @@ class ListItems extends Component {
       return (
         <div className="list" key={item.key}>
           <p>
-            <span>
+            <div className="newRow">
               <input
                 type="text"
                 className="form-control"
@@ -18,17 +19,17 @@ class ListItems extends Component {
                   this.props.setUpdate(e.target.value, item.key);
                 }}
               />
-            </span>
-            <span>
+            </div>
+            <div className="newButtonRow">
               <button
                 className="btn btn-primary btn-sm"
                 onClick={() => {
                   this.props.deleteItem(item.key);
                 }}
               >
-                button
+                Delete Task
               </button>
-            </span>
+            </div>
           </p>
         </div>
       );
