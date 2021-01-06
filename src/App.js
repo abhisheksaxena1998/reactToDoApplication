@@ -29,6 +29,14 @@ class App extends Component {
     })
     }
   };
+
+  deleteItem=(key)=>{
+    const filteredItems= this.state.items.filter(item =>
+      item.key!==key);
+    this.setState({
+      items: filteredItems
+    })}
+
   setUpdate=(text,key)=>{
     console.log("items:"+this.state.items);
     const items = this.state.items;
@@ -50,7 +58,7 @@ class App extends Component {
   }
 
   render() { 
-    console.log(this.state.items)
+    console.log(this.state.items);
     const listItems = this.state.items.map((d) => <li key={d.key}>{d.text}</li>);
     return ( <React.Fragment>
 
@@ -81,7 +89,7 @@ class App extends Component {
       {listItems }
       </div>
       <main className="container">
-        < ListItems items={this.state.items} setUpdate={this.setUpdate}
+        < ListItems items={this.state.items} setUpdate={this.setUpdate} deleteItem={this.deleteItem}
         />
         </main>
       </React.Fragment> );

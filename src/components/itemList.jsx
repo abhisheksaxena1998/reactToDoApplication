@@ -23,7 +23,7 @@ class ListItems extends Component {
               <button
                 className="btn btn-primary btn-sm"
                 onClick={() => {
-                  console.log(item.key);
+                  this.props.deleteItem(item.key);
                 }}
               >
                 button
