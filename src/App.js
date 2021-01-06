@@ -21,7 +21,7 @@ class App extends Component {
 
   checkComplete(){
     if (this.state.items.length===0) return (<div className="imagebox">
-      <img className="img-completed" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/src/og-image.png"></img>
+      <img className="img-completed" align="center" src="https://raw.githubusercontent.com/abhisheksaxena1998/reactToDoApplication/main/public/completed.png"></img>
       </div>)
     
     }
