@@ -15,8 +15,8 @@ class App extends Component {
     status:''
   },
     items: [
-      { key: 4, text: 'Do cool projects in React', status: "completed"  },
-      { key: 9, text: 'Learn JavaScript', status: "notcompleted"  },
+      { key: 4, text: 'Do cool projects in React', status: "Completed"  },
+      { key: 9, text: 'Learn JavaScript', status: "Not Completed"  },
     ],
   };
 
@@ -70,7 +70,7 @@ class App extends Component {
         var newItem={
           key:item.key,
           text:item.text,
-          status:"completed"}
+          status:"Completed"}
         const items = [...filteredItems, newItem];
 
         this.setState({
@@ -90,7 +90,7 @@ class App extends Component {
         var newItem={
           key:item.key,
           text:item.text,
-          status:"notcompleted"}
+          status:"Not Completed"}
         const items = [...filteredItems, newItem];
 
         this.setState({
@@ -146,7 +146,7 @@ class App extends Component {
               currentItem:{
                 text: e.target.value,
                 key: Date.now(),
-                status:"notcompleted"
+                status:"Not Completed"
               }
             });
             console.log(this.state);

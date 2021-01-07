@@ -8,11 +8,15 @@ import "mdbreact/dist/css/mdb.css";
 class ListItems extends Component {
   getBadgeClasses(item) {
     console.log("new list", item.status);
-    let classes = "form-control-new-" + item.status;
+    let classes = "form-control-new-";
 
-    /* classes +=
-      this.props.items.status === "completed" ? "completed" : "notcompleted"; */
+    classes += item.status === "Completed" ? "completed" : "notcompleted";
     console.log(classes);
+    return classes;
+  }
+  getPillClasses(item) {
+    let classes = "badge badge-pill badge-";
+    classes += item.status === "Completed" ? "success" : "warning";
     return classes;
   }
   render() {
@@ -61,6 +65,9 @@ class ListItems extends Component {
             >
               Mark as incomplete !
             </button>
+            <span className={this.getPillClasses(item)}>
+              Status: {item.status}
+            </span>
           </div>
         </div>
       );
