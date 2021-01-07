@@ -37,7 +37,7 @@ class ListItems extends Component {
             <button
               className="btn btn-warning btn-sm"
               onClick={() => {
-                swal("Deleted !", "Marked as done :)", "error");
+                swal("Deleted !", "Task deleted :)", "error");
                 this.props.deleteItem(item.key);
               }}
             >
@@ -46,7 +46,7 @@ class ListItems extends Component {
             <button
               className="btn btn-info btn-sm"
               onClick={() => {
-                swal("Deleted !", "Marked as done :)", "error");
+                swal("Done !", "Marked as done :)", "success");
                 this.props.markdoneItem(item);
               }}
             >
@@ -55,7 +55,7 @@ class ListItems extends Component {
             <button
               className="btn btn-danger btn-sm"
               onClick={() => {
-                swal("Deleted !", "Marked as done :)", "error");
+                swal("Pending !", "Marked as pending :)", "info");
                 this.props.markincompleteItem(item);
               }}
             >
