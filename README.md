@@ -11,6 +11,7 @@
 3. Delete a task.
 4. Delete all tasks at a time.
 5. Track number of active available tasks in NavBar.
+6. Edit tasks.
 
 ## Getting Started with Create React App
 
