@@ -18,6 +18,7 @@
 }
 
 .form-control-new-completed {
+  text-decoration: line-through;
   margin-top: 2rem;
   display: block;
   width: 100%;
