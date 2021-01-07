@@ -4,6 +4,13 @@
 
 ![screenshot](/images/tododesktopgif.gif)
 
+## Use cases:
+
+1. Add a new task.
+2. Mark it as completed or pending.
+3. Delete a task.
+4. Delete all tasks at a time.
+5. Track number of active available tasks in NavBar.
 
 ## Getting Started with Create React App
 
