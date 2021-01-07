@@ -16,7 +16,7 @@ class ListItems extends Component {
   }
   getPillClasses(item) {
     let classes = "badge badge-pill badge-";
-    classes += item.status === "Completed" ? "success" : "warning";
+    classes += item.status === "Completed" ? "primary" : "warning";
     return classes;
   }
   render() {
