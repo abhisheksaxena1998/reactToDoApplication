@@ -35,7 +35,7 @@ class ListItems extends Component {
           </div>
           <div className="newButtonRow">
             <button
-              className="btn btn-warning btn-sm"
+              className="btn btn-danger btn-sm"
               onClick={() => {
                 swal("Deleted !", "Task deleted :)", "error");
                 this.props.deleteItem(item.key);
@@ -44,7 +44,7 @@ class ListItems extends Component {
               Delete Task !
             </button>
             <button
-              className="btn btn-info btn-sm"
+              className="btn dusty-grass-gradient btn-sm"
               onClick={() => {
                 swal("Done !", "Marked as done :)", "success");
                 this.props.markdoneItem(item);
@@ -53,7 +53,7 @@ class ListItems extends Component {
               Mark as Done !
             </button>
             <button
-              className="btn btn-danger btn-sm"
+              className="btn sunny-morning-gradient btn-sm"
               onClick={() => {
                 swal("Pending !", "Marked as pending :)", "info");
                 this.props.markincompleteItem(item);

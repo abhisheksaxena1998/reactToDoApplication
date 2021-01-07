@@ -15,9 +15,8 @@ class App extends Component {
     status:''
   },
     items: [
-      { key: 1, text: 'Learn JavaScript', status: "completed" },
       { key: 4, text: 'Do cool projects in React', status: "completed"  },
-      { key: 9, text: 'Do cool projects', status: "notcompleted"  },
+      { key: 9, text: 'Learn JavaScript', status: "notcompleted"  },
     ],
   };
 
@@ -154,12 +153,13 @@ class App extends Component {
           }}
         ></input>
         <button
-        type="button" className="btn blue-gradient waves-effect waves-light "
+        type="button" className="btn winter-neva-gradient waves-effect waves-light "
           onClick={this.handleSubmit}
         >
           Add task
         </button> 
-        <button className="btn blue-gradient waves-effect waves-light " onClick={this.handleReset}>Mark all as done</button>
+        <button className="btn sunny-morning-gradient
+ waves-effect waves-light " onClick={this.handleReset}>Mark all as done</button>
         </div>
         {this.checkComplete()}
         </div></div>
