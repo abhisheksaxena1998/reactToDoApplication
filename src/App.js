@@ -11,11 +11,13 @@ import "mdbreact/dist/css/mdb.css";
 class App extends Component {
   state = {currentItem:{
     key:'',
-    text:''
+    text:'',
+    status:''
   },
     items: [
-      { key: 1, text: 'Learn JavaScript' },
-      { key: 4, text: 'Do cool projects in React' },
+      { key: 1, text: 'Learn JavaScript', status: "completed" },
+      { key: 4, text: 'Do cool projects in React', status: "completed"  },
+      { key: 9, text: 'Do cool projects', status: "notcompleted"  },
     ],
   };
 
@@ -45,7 +47,8 @@ class App extends Component {
       items: items,
       currentItem:{
         text:'',
-        key:''
+        key:'',
+        status: ""
       }
     })
     }
@@ -61,6 +64,46 @@ class App extends Component {
     this.setState({
       items: filteredItems
     })}
+
+    markdoneItem=(item)=>{
+      const filteredItems= this.state.items.filter(itemz =>
+        itemz.key!==item.key);
+        var newItem={
+          key:item.key,
+          text:item.text,
+          status:"completed"}
+        const items = [...filteredItems, newItem];
+
+        this.setState({
+          items: items,
+          currentItem:{
+            text:'',
+            key:'',
+            status: ""
+          }
+        })
+        console.log("done filtered",item)
+    }
+
+    markincompleteItem=(item)=>{
+      const filteredItems= this.state.items.filter(itemz =>
+        itemz.key!==item.key);
+        var newItem={
+          key:item.key,
+          text:item.text,
+          status:"notcompleted"}
+        const items = [...filteredItems, newItem];
+
+        this.setState({
+          items: items,
+          currentItem:{
+            text:'',
+            key:'',
+            status: ""
+          }
+        })
+        console.log("done filtered",item)
+    }
 
   setUpdate=(text,key)=>{
     console.log("items:"+this.state.items);
@@ -103,7 +146,8 @@ class App extends Component {
             this.setState({
               currentItem:{
                 text: e.target.value,
-                key: Date.now()
+                key: Date.now(),
+                status:"notcompleted"
               }
             });
             console.log(this.state);
@@ -122,7 +166,7 @@ class App extends Component {
         
        
       <main className="container">
-        < ListItems items={this.state.items} setUpdate={this.setUpdate} deleteItem={this.deleteItem}
+        < ListItems items={this.state.items} status={this.state.items.status} markdoneItem={this.markdoneItem} markincompleteItem={this.markincompleteItem} setUpdate={this.setUpdate} deleteItem={this.deleteItem}
         />
         </main>
         
