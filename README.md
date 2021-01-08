@@ -1,4 +1,4 @@
-## A To-Do Application in React
+## A To-Do Application in React   ![views](https://visitor-badge.laobi.icu/badge?page_id=abhisheksaxena1998/reactToDoApplication/)
 
 ### https://abhisheksaxena1998.github.io/reactToDoApplication/
 
